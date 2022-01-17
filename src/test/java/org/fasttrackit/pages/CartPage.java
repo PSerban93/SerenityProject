@@ -40,7 +40,6 @@ public class CartPage extends BasePage {
         //clickOn(emptyCart);
     }
 
-
     public void checkaddSuccess(String addSuccess) {
         addSuccessElement.shouldContainOnlyText(addSuccess);
     }
@@ -69,6 +68,7 @@ public class CartPage extends BasePage {
     public boolean isGrandTotalPriceCorrect(){
         return getSubtotalPriceWithTaxes() == getIntFromPrice(grandTotal.getText());
     }
+
 }
 
 

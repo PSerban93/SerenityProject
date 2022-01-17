@@ -15,16 +15,12 @@ public class SearchTest extends BaseTest{
 
     @Test
     public void searchTestsortbyPrice(){
-//        loginSteps.doLogin(EnvConstants.USER_EMAIL, EnvConstants.USER_PASS);
+//      loginSteps.doLogin(EnvConstants.USER_EMAIL, EnvConstants.USER_PASS);
         searchSteps.executeSearch("book");
         searchSteps.verifyifProductDisplayed("A TALE OF TWO CITIES");
         searchSteps.clicksortBydropdown();
         searchSteps.clicksortByPrice();
         searchSteps.checkisPriceCorrectArranged();
         searchSteps.checkfirstPriceIsallwayslower();
-
-
-
-
     }
 }

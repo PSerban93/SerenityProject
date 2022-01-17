@@ -60,4 +60,5 @@ public class SearchSteps extends BaseSteps {
     public void checkfirstPriceIsallwayslower(){
         Assert.assertTrue("First product price is not lower than last product.", searchResultsPage.isPriceCorrectArranged());
     }
+
 }

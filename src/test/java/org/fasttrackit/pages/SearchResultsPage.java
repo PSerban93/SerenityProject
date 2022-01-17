@@ -44,24 +44,22 @@ public class SearchResultsPage extends BasePage {
     private WebElementFacade sortByPrice;
     @FindBy(css = ".products-grid .item .price:not([id])")
     private List<WebElementFacade> lisofPrice;
-//    @FindBy(css = ".products-grid> li:nth-child(3) .price")
-//    .products-grid> li:nth-child(1) .price
-//    private String highprice;
 
     public void clicksortBydropdown(){
         clickOn(sortBy);
     }
+
     public void clicksortByRelevance(){
         clickOn(sortByRelevance);
     }
+
     public void clicksortByName(){
         clickOn(sortByName);
     }
+
     public void clicksortByPrice(){
         clickOn(sortByPrice);
     }
-
-
 
 //    public int getPrice() {
 //        int sum = 0;
@@ -75,6 +73,5 @@ public class SearchResultsPage extends BasePage {
         return  getIntFromPrice(lisofPrice.get(0).getText()) <
                 getIntFromPrice(lisofPrice.get(lisofPrice.size()-1).getText());
     }
-
 
 }

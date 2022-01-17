@@ -10,27 +10,32 @@ public class CartSteps extends BaseSteps {
     public void clickAddProductToCart(){
         productPage.clickAddToCartButton();
     }
+
     @Step
     public void clickselectColor(){
         productPage.clickselectColor();
     }
+
     @Step
     public void clickselectColor1(){
         productPage.clickselectColor1();
     }
+
     @Step
     public void clickselectSize() {
         productPage.clickselectSize();
     }
+
     @Step
     public void clickselectSize1() {
         productPage.clickselectSize1();
     }
+
     @Step
     public void checkCartSuccess(String cartSuccess){
         productPage.checkCartSuccess("Khaki Bowery Chino Pants was added to your shopping cart.");
-
     }
+
     @Step
     public void navigateToCartPagefromCarticon(){
         homePage.clickminicartIcon();
@@ -42,6 +47,7 @@ public class CartSteps extends BaseSteps {
         homePage.clickAccountLink();
         homePage.clickcartLink();
     }
+
     @Step
     public void checkaddSuccess(String addSuccess){
         cartPage.checkaddSuccess(addSuccess);

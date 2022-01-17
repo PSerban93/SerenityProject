@@ -22,14 +22,12 @@ public class CartTest extends BaseTest {
         cartSteps.clickselectSize();
         cartSteps.clickAddProductToCart();
         cartSteps.checkaddSuccess("Khaki Bowery Chino Pants was added to your shopping cart.");
-
     }
 
     @Test
     public void proceedtoCart() {
         loginSteps.doLogin(EnvConstants.USER_EMAIL, EnvConstants.USER_PASS);
         cartSteps.navigateToCart();
-
     }
 
     @Test
@@ -68,6 +66,6 @@ public class CartTest extends BaseTest {
         cartSteps.navigateToCart();
         cartSteps.checkSubtotalPriceIsDisplayedCorrectly();
         cartSteps.checkGrandTotalPriceIsCorrect();
-
     }
+
 }
