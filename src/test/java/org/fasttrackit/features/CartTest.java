@@ -44,6 +44,7 @@ public class CartTest extends BaseTest {
         loginSteps.doLogin(EnvConstants.USER_EMAIL, EnvConstants.USER_PASS);
         cartSteps.navigateToCart();
         cartSteps.clearCart();
+        cartSteps.cartisEmpty();
         searchSteps.searchAndSelectProduct("KHAKI BOWERY CHINO PANTS");
         cartSteps.clickselectColor();
         cartSteps.clickselectSize();

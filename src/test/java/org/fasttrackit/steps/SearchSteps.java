@@ -50,8 +50,14 @@ public class SearchSteps extends BaseSteps {
     public void clicksortByPrice(){
         searchResultsPage.clicksortByPrice();
     }
-//    @Step
-//    public void checkfirstPriceIsallwayslower(){
-//        Assert.assertTrue("First product price is allways lower.", searchResultsPage.isPriceCorrect());
-//    }
+
+    @Step
+    public void checkisPriceCorrectArranged(){
+        searchResultsPage.isPriceCorrectArranged();
+    }
+
+    @Step
+    public void checkfirstPriceIsallwayslower(){
+        Assert.assertTrue("First product price is not lower than last product.", searchResultsPage.isPriceCorrectArranged());
+    }
 }

@@ -29,16 +29,14 @@ public class CartPage extends BasePage {
     private WebElementFacade grandTotal;
 
 
-    public void cartisEmpty(String cartEmpty) {
+    public void cartisEmpty() {
         cartisEmptytext.shouldContainOnlyText("SHOPPING CART IS EMPTY");
     }
 
-    public String clickEmptyCart() {
-        String x = cartisEmptytext.getText();
+    public void clickEmptyCart() {
         if (emptyCart.isPresent()) {
             emptyCart.click();
         }
-        return x;
         //clickOn(emptyCart);
     }
 

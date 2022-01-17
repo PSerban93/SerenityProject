@@ -48,8 +48,8 @@ public class CartSteps extends BaseSteps {
     }
 
     @Step
-    public void cartisEmpty(String cartEmpty){
-        cartPage.cartisEmpty("SHOPPING CART IS EMPTY");
+    public void cartisEmpty(){
+        cartPage.cartisEmpty();
 
     }
     @Step
