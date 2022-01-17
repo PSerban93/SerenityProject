@@ -1,27 +1,11 @@
 package org.fasttrackit.steps;
 
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
-import net.thucydides.core.steps.ScenarioSteps;
-import org.fasttrackit.pages.HomePage;
-import org.fasttrackit.pages.RegisterPage;
-import org.fasttrackit.pages.MyAccountPage;
 
-
-public class RegisterSteps extends ScenarioSteps {
-
-
-    private HomePage homePage;
-    private RegisterPage registerPage;
-
-    @Step
-    public void navigateToHomePage(){
-        homePage.open();
-    }
+public class RegisterSteps extends BaseSteps {
 
     @Step
     public void navigateToRegisterPage() {
-
         homePage.clickAccountLink();
         homePage.clickRegisterLink();
     }

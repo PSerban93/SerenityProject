@@ -1,14 +1,10 @@
 package org.fasttrackit.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
-
 import java.time.Duration;
-import java.time.temporal.TemporalUnit;
-import java.util.concurrent.TimeUnit;
 
-public class LoginPage extends PageObject {
+public class LoginPage extends BasePage {
 
     @FindBy(id = "email")
     private WebElementFacade emailField;

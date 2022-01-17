@@ -1,49 +1,36 @@
 package org.fasttrackit.features;
 
+import org.fasttrackit.utils.EnvConstants;
 import org.junit.Test;
 
 public class LoginTest extends BaseTest {
 
     @Test
     public void loginWithValidCredentialsTest() {
-        loginSteps.navigateToHomePage();
-        loginSteps.navigateToLoginPage();
-        loginSteps.enterCredentials("cosmin@fasttrackit.org", "123456");
-        loginSteps.clickLogin();
-        loginSteps.checkUserIsLoggedIn("Cosmin Fast");
+        loginSteps.doLogin(EnvConstants.USER_EMAIL, EnvConstants.USER_PASS);
+        loginSteps.checkUserIsLoggedIn(EnvConstants.USER_NAME);
     }
 
     @Test
     public void loginWithInvalidCredentialsTest() {
-        loginSteps.navigateToHomePage();
-        loginSteps.navigateToLoginPage();
-        loginSteps.enterCredentials("cosmin@fastrackit.org", "123456");
-        loginSteps.clickLogin();
-        loginSteps.checkLoggedInmsg("Invalid login or password.");
+        loginSteps.doLogin("cosmin@fastrackit.org", "123654");
+               loginSteps.checkLoggedInmsg("Invalid login or password.");
     }
 
     @Test
     public void loginWithInvalidpasswordTest() {
-        loginSteps.navigateToHomePage();
-        loginSteps.navigateToLoginPage();
-        loginSteps.enterCredentials("cosmin@fasttrackit.org", "123456asdf");
-        loginSteps.clickLogin();
+        loginSteps.doLogin(EnvConstants.USER_EMAIL, "123456asdf");
         loginSteps.checkLoggedInmsg("Invalid login or password.");
     }
+
     @Test
     public void loginWithoutemail() {
-        loginSteps.navigateToHomePage();
-        loginSteps.navigateToLoginPage();
-        loginSteps.enterCredentials("", "123456");
-        loginSteps.clickLogin();
+        loginSteps.doLogin("",EnvConstants.USER_PASS);
         loginSteps.checkRequiredMessage("This is a required field.");
     }
     @Test
     public void loginWithoutpass() {
-        loginSteps.navigateToHomePage();
-        loginSteps.navigateToLoginPage();
-        loginSteps.enterCredentials("cosmin@fasttrackit.org", "");
-        loginSteps.clickLogin();
+        loginSteps.doLogin(EnvConstants.USER_EMAIL, "");
         loginSteps.checkRequiredPass("This is a required field.");
     }
 }

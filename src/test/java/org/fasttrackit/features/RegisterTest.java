@@ -8,7 +8,6 @@ public class RegisterTest extends BaseTest {
 
     @Test
     public void registernewwithoutpass() {
-        registerSteps.navigateToHomePage();
         registerSteps.navigateToRegisterPage();
         registerSteps.enterCredentialsnoPass("Serban","Perseca", "ion.dintufe"+email);
         registerSteps.clickRegister();
@@ -16,7 +15,6 @@ public class RegisterTest extends BaseTest {
     }
     @Test
     public void registernewwithoutmail() {
-        registerSteps.navigateToHomePage();
         registerSteps.navigateToRegisterPage();
         registerSteps.enterCredentialsnoMail("Serban","Perseca", "123456","123456");
         registerSteps.clickRegister();
@@ -24,7 +22,6 @@ public class RegisterTest extends BaseTest {
     }
     @Test
     public void registernew() {
-        registerSteps.navigateToHomePage();
         registerSteps.navigateToRegisterPage();
         registerSteps.enterCredentials("Serban","Perseca", "ion.dintufe"+email,"123456", "123456");
         registerSteps.clickRegister();

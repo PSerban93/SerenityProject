@@ -1,19 +1,12 @@
 package org.fasttrackit.steps;
 
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
-import net.thucydides.core.steps.ScenarioSteps;
-import org.fasttrackit.pages.HomePage;
-import org.fasttrackit.pages.LoginPage;
 import org.fasttrackit.pages.SearchResultsPage;
 import org.junit.Assert;
 
-public class SearchSteps extends ScenarioSteps {
+public class SearchSteps extends BaseSteps {
 
-    private HomePage homePage;
-    private LoginPage loginPage;
-    private SearchResultsPage searchResultsPage;
-    private LoginSteps loginSteps;
+
 
     @Step
     public void executeSearch(String keyword){
@@ -32,4 +25,33 @@ public class SearchSteps extends ScenarioSteps {
         findAndOpenProduct(productName);
     }
 
+    @Step
+    public void verifyifProductDisplayed(String productName){
+        Assert.assertTrue(searchResultsPage.isProductDisplayed(productName));
+
+    }
+
+    @Step
+    public void clicksortBydropdown(){
+        searchResultsPage.clicksortBydropdown();
+    }
+
+    @Step
+    public void clicksortByRelevance(){
+        searchResultsPage.clicksortByRelevance();
+    }
+
+    @Step
+    public void clicksortByName(){
+        searchResultsPage.clicksortByName();
+    }
+
+    @Step
+    public void clicksortByPrice(){
+        searchResultsPage.clicksortByPrice();
+    }
+//    @Step
+//    public void checkfirstPriceIsallwayslower(){
+//        Assert.assertTrue("First product price is allways lower.", searchResultsPage.isPriceCorrect());
+//    }
 }

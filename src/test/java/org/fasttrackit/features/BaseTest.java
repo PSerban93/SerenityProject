@@ -2,12 +2,9 @@ package org.fasttrackit.features;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
-import org.fasttrackit.steps.CartSteps;
-import org.fasttrackit.steps.LoginSteps;
-import org.fasttrackit.steps.RegisterSteps;
-import org.fasttrackit.steps.SearchSteps;
+import org.fasttrackit.steps.*;
+import org.fasttrackit.utils.EnvConstants;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +18,7 @@ public class BaseTest {
     @Before
     public void maximise(){
         driver.manage().window().maximize();
+        driver.get(EnvConstants.BASE_URL);
     }
 
     @Steps
@@ -31,4 +29,6 @@ public class BaseTest {
     protected CartSteps cartSteps;
     @Steps
     protected RegisterSteps registerSteps;
+    @Steps
+    protected CheckoutSteps checkoutSteps;
 }

@@ -2,11 +2,10 @@ package org.fasttrackit.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
-import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl("http://testfasttrackit.info/selenium-test/")
-public class HomePage extends PageObject {
+
+
+public class HomePage extends BasePage {
 
     @FindBy(css = ".skip-account .label")
     private WebElementFacade accountLink;
@@ -25,6 +24,24 @@ public class HomePage extends PageObject {
 
     @FindBy(css = "li.level0.nav-6.menu-active:nth-child(6) > a")
     private WebElementFacade productCategoryButton;
+
+    @FindBy(css = ".header-minicart .label")
+    private WebElementFacade minicartIcon;
+
+    @FindBy(css = ".cart-link")
+    private WebElementFacade minicartLink;
+
+    @FindBy(css = ".links:nth-child(1) .top-link-cart")
+    private WebElementFacade cartLink;
+
+    @FindBy(css = ".links:nth-child(1) .top-link-checkout")
+    private WebElementFacade checkoutLink;
+
+    @FindBy(css = ".checkout-button")
+    private WebElementFacade checkoutcarticonLink;
+
+
+
 
     public void clickAccountLink() {
         clickOn(accountLink);
@@ -48,5 +65,25 @@ public class HomePage extends PageObject {
 
     public void clickProductCategory() {
         clickOn(productCategoryButton);
+    }
+
+    public void clickminicartIcon(){
+        clickOn(minicartIcon);
+    }
+
+    public void clickminicartLink(){
+        waitFor(minicartLink);
+        clickOn(minicartLink);
+    }
+
+    public void clickcartLink(){
+        clickOn(cartLink);
+    }
+
+    public void clickcheckoutLink(){
+        clickOn(checkoutLink);
+    }
+    public void clickcheckoutcarticonLink(){
+        clickOn(checkoutcarticonLink);
     }
 }
